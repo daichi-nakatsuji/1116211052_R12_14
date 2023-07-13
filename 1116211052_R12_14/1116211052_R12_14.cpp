@@ -8,6 +8,10 @@
 
 int main()
 {
+    char currentDirectory[CHARBUFF];
+    getGurrentDirectory(currentDirectory);
+
+
     fprintf_s(stdout, "期末課題\n");
 }
 
