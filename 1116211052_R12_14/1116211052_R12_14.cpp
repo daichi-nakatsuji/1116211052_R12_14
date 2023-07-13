@@ -8,7 +8,7 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    fprintf_s(stdout, "期末課題\n");
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
