@@ -8,11 +8,15 @@
 
 int main()
 {
-    char currentDirectory[CHARBUFF];
-    getGurrentDirectory(currentDirectory);
+    com* Sakura;
+    Sakura = new com;
+    createAgent("section1", Sakura);
+    
+    //CSVファイルの入力
 
 
     fprintf_s(stdout, "期末課題\n");
+    //結果の出力
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー

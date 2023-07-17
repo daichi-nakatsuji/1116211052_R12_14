@@ -12,3 +12,4 @@ struct com {
 
 //ŠÖ”‚ÌéŒ¾
 void getGurrentDirectory(char* currentDirectory);
+void createAgent(const char* sec, com* name);
