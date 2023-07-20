@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="1116211052_R12_14.cpp" />
-    <ClCompile Include="Setting.cpp" />
+    <ClCompile Include="readini.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Setting.h" />

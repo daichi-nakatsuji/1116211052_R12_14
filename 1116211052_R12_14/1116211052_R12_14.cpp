@@ -8,10 +8,10 @@
 
 int main()
 {
-    com* Sakura;
-    Sakura = new com;
-    createAgent("section1", Sakura);
-    
+    /*com Sakura;*/
+    /*createAgent("section1", Sakura);*/
+    /*char filename[Month][10];*/
+    createManthdata();
     //CSVファイルの入力
 
 

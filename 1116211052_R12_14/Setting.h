@@ -2,6 +2,9 @@
 
 //•Ï”‚ÌéŒ¾
 #define CHARBUFF 124
+#define Month 12
+#define Day 31
+double data[Month][Day];
 
 //\‘¢‘Ì‚Ìİ’è
 struct com {
@@ -12,4 +15,4 @@ struct com {
 
 //ŠÖ”‚ÌéŒ¾
 void getGurrentDirectory(char* currentDirectory);
-void createAgent(const char* sec, com* name);
+void createManthdata();
