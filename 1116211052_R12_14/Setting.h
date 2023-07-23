@@ -5,14 +5,15 @@
 #define Month 12
 #define Day 31
 double data[Month][Day];
-char* file[Month];
+const char* file[Month];
+
 //\‘¢‘Ì‚Ìİ’è
 struct com {
-	int MoveTime;
-	int DcTime;
-	int BuyTime;
+	int MoveNum;
+	int point;
 };
 
 //ŠÖ”‚ÌéŒ¾
 void getGurrentDirectory(char* currentDirectory);
-void createManthdata(char* file[Month]);
+void read_ini(const char* file[Month]);
+void readFile(const char* file[Month], double data[Month][Day]);

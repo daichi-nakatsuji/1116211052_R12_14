@@ -7,7 +7,7 @@ void getGurrentDirectory(char* currentDirectory) {
 	GetCurrentDirectory(CHARBUFF, currentDirectory);
 }
 
-void createManthdata(char* file[Month]) {
+void read_ini(const char* file[Month]) {
 	char currentDirectory[CHARBUFF];
 	getGurrentDirectory(currentDirectory);
 
@@ -56,6 +56,6 @@ void createManthdata(char* file[Month]) {
 
 	for (int i = 0; i < Month; i++) {
 		file[i] = keyValue[i];
-		fprintf_s(stdout, "%s\n", file[i]);
+		/*fprintf_s(stdout, "%s\n", file[i]);*/
 	}
 }
