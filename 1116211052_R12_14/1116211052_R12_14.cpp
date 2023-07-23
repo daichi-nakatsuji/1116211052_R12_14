@@ -8,17 +8,15 @@
 
 int main()
 {
-    /*com Sakura;*/
-    /*createAgent("section1", Sakura);*/
-    /*char filename[Month][10];*/
+    //iniファイルの読み込み
     read_ini(file);
-    readFile(file, data);
-    
     //CSVファイルの入力
+    readFile(file, data);
 
 
-    fprintf_s(stdout, "期末課題\n");
+
     //結果の出力
+
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
