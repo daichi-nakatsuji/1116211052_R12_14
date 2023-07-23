@@ -11,7 +11,7 @@ int main()
     /*com Sakura;*/
     /*createAgent("section1", Sakura);*/
     /*char filename[Month][10];*/
-    createManthdata();
+    createManthdata(file);
     //CSVファイルの入力
 
 

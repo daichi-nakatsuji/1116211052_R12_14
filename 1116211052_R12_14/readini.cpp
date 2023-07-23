@@ -7,7 +7,7 @@ void getGurrentDirectory(char* currentDirectory) {
 	GetCurrentDirectory(CHARBUFF, currentDirectory);
 }
 
-void createManthdata() {
+void createManthdata(char* file[Month]) {
 	char currentDirectory[CHARBUFF];
 	getGurrentDirectory(currentDirectory);
 
@@ -39,20 +39,23 @@ void createManthdata() {
 	sprintf_s(keyWord12, "keyword12");
 	char settingFile[CHARBUFF];
 	sprintf_s(settingFile, "%s\\setting.ini", currentDirectory);
-	char keyValue[CHARBUFF];
+	char keyValue[12][CHARBUFF];
 
-	char file1 = GetPrivateProfileString(section, keyWord1, "none", keyValue, CHARBUFF, settingFile);
-	char file2 = GetPrivateProfileString(section, keyWord2, "none", keyValue, CHARBUFF, settingFile);
-	char file3 = GetPrivateProfileString(section, keyWord3, "none", keyValue, CHARBUFF, settingFile);
-	char file4 = GetPrivateProfileString(section, keyWord4, "none", keyValue, CHARBUFF, settingFile);
-	char file5 = GetPrivateProfileString(section, keyWord5, "none", keyValue, CHARBUFF, settingFile);
-	char file6 = GetPrivateProfileString(section, keyWord6, "none", keyValue, CHARBUFF, settingFile);
-	char file7 = GetPrivateProfileString(section, keyWord7, "none", keyValue, CHARBUFF, settingFile);
-	char file8 = GetPrivateProfileString(section, keyWord8, "none", keyValue, CHARBUFF, settingFile);
-	char file9 = GetPrivateProfileString(section, keyWord9, "none", keyValue, CHARBUFF, settingFile);
-	char file10 = GetPrivateProfileString(section, keyWord10, "none", keyValue, CHARBUFF, settingFile);
-	char file11 = GetPrivateProfileString(section, keyWord11, "none", keyValue, CHARBUFF, settingFile);
-	char file12 = GetPrivateProfileString(section, keyWord12, "none", keyValue, CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord1, "none", keyValue[0], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord2, "none", keyValue[1], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord3, "none", keyValue[2], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord4, "none", keyValue[3], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord5, "none", keyValue[4], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord6, "none", keyValue[5], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord7, "none", keyValue[6], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord8, "none", keyValue[7], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord9, "none", keyValue[8], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord10, "none", keyValue[9], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord11, "none", keyValue[10], CHARBUFF, settingFile);
+	GetPrivateProfileString(section, keyWord12, "none", keyValue[11], CHARBUFF, settingFile);
 
-	fprintf_s(stdout, "%s\n", file1);
+	for (int i = 0; i < Month; i++) {
+		file[i] = keyValue[i];
+		fprintf_s(stdout, "%s\n", file[i]);
+	}
 }
