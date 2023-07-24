@@ -60,14 +60,24 @@ int main()
             com1->MoveNum = -1;
             com1->point -= ((int)(rand() % 10) + 10);
         }
-        fprintf_s(stdout, "進んだマス数:%d\n", com1->MoveNum);
+        fprintf_s(stdout, "%d日目\n進んだマス数:%d\n", i + 1, com1->MoveNum);
         fprintf_s(stdout, "合計獲得ポイント:%d\n", com1->point);
         count = 0;
     }
 
     //結果の出力
     fprintf_s(stdout, "\n最終結果:%d\n", com1->point);
-
+    FILE* fp;
+    char s[BUFFSIZE];
+    errno_t error;
+    error = fopen_s(&fp, "GameScore.txt", "w");
+    if (error != 0)
+        fprintf_s(stderr, "failed to open\n");
+    else {
+        fprintf_s(fp, "Player:%d\n", com1->Num);
+        fprintf_s(fp, "month:%d月\n", com1->month + 1);
+        fprintf_s(fp, "獲得得点:%d点\n", com1->point);
+    }
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
