@@ -9,23 +9,25 @@
 void readFile(char file[Month][CHARBUFF], double data[Month][Day]) {
     FILE* fp;
     char s[BUFFSIZE];
-    int count = -1;
-    int a = 0;
+    int count;
     char* p1;
     char delim[] = ", ";
     char* ctx;
-
+    
     errno_t error;
     for (int i = 0; i < Month; i++) {
+        count = -1;
         error = fopen_s(&fp, file[i], "r");
         if (error != 0)
             fprintf_s(stderr, "failed to open\n");
         else {
+            fprintf_s(stderr, "%d\n", i+1);
             while (fgets(s, BUFFSIZE, fp) != NULL) {
-                if (count >= 6) {
-                    p1 = strtok_s(s, delim, &ctx);
-                    data[i][a] = atof(p1);
-                    a += 1;
+                p1 = strtok_s(s, delim, &ctx);
+                if (count >= 0) {
+                    p1 = strtok_s(NULL, delim, &ctx);
+                    data[i][count] = atof(p1);
+                    fprintf_s(stderr, "%lf\n", data[i][count]);
                 }
                 count += 1;
             }

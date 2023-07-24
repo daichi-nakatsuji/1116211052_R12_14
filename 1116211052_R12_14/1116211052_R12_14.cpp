@@ -5,6 +5,9 @@
 #include "Setting.h"
 #include <Windows.h>
 #include <stdio.h>
+#include <time.h>
+#define BUFFSIZE 1024
+#define RAND_MAX 12 
 
 int main()
 {
@@ -13,15 +16,22 @@ int main()
     for (int i = 0; i < Month; i++) {
         fprintf_s(stdout, "%s\n", file[i]);
     }
+
     //CSVファイルの入力
-    int i = 0;
     readFile(file, data);
+   
+    //ゲームの実行
+    //乱数で月を選択
+    srand((unsigned int)time(NULL));
+    int month = (int)(rand() % (RAND_MAX));
+    fprintf_s(stdout, "%d月\n", month+1);
 
-
+    //すごろくの実行
+    
 
     //結果の出力
 
-////}
+}
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
 // プログラムのデバッグ: F5 または [デバッグ] > [デバッグの開始] メニュー
