@@ -5,7 +5,7 @@
 #define Month 12
 #define Day 31
 double data[Month][Day];
-const char* file[Month];
+char file[Month][CHARBUFF];
 
 //\‘¢‘Ì‚Ìİ’è
 struct com {
@@ -15,5 +15,5 @@ struct com {
 
 //ŠÖ”‚ÌéŒ¾
 void getGurrentDirectory(char* currentDirectory);
-void read_ini(const char* file[Month]);
-void readFile(const char* file[Month], double data[Month][Day]);
+void read_ini(char file[Month][CHARBUFF]);
+void readFile(char file[Month][CHARBUFF], double data[Month][Day]);

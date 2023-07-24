@@ -7,7 +7,7 @@ void getGurrentDirectory(char* currentDirectory) {
 	GetCurrentDirectory(CHARBUFF, currentDirectory);
 }
 
-void read_ini(const char* file[Month]) {
+void read_ini(char file[Month][CHARBUFF]) {
 	char currentDirectory[CHARBUFF];
 	getGurrentDirectory(currentDirectory);
 
@@ -53,9 +53,9 @@ void read_ini(const char* file[Month]) {
 	GetPrivateProfileString(section, keyWord10, "none", keyValue[9], CHARBUFF, settingFile);
 	GetPrivateProfileString(section, keyWord11, "none", keyValue[10], CHARBUFF, settingFile);
 	GetPrivateProfileString(section, keyWord12, "none", keyValue[11], CHARBUFF, settingFile);
+	file = keyValue;
 
 	for (int i = 0; i < Month; i++) {
-		file[i] = keyValue[i];
-		/*fprintf_s(stdout, "%s\n", file[i]);*/
+		fprintf_s(stdout, "%s\n", file[i]);
 	}
 }

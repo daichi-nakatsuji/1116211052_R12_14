@@ -2,10 +2,11 @@
 #include <stdio.h>
 
 #define BUFFSIZE 1024
+#define CHARBUFF 124
 #define Month 12
 #define Day 31
 
-void readFile(const char* file[Month], double data[Month][Day]) {
+void readFile(char file[Month][CHARBUFF], double data[Month][Day]) {
     FILE* fp;
     char s[BUFFSIZE];
     int count = -1;

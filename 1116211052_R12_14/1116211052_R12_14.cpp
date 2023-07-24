@@ -10,14 +10,18 @@ int main()
 {
     //iniファイルの読み込み
     read_ini(file);
+    for (int i = 0; i < Month; i++) {
+        fprintf_s(stdout, "%s\n", file[i]);
+    }
     //CSVファイルの入力
+    int i = 0;
     readFile(file, data);
 
 
 
     //結果の出力
 
-}
+////}
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
 // プログラムのデバッグ: F5 または [デバッグ] > [デバッグの開始] メニュー
