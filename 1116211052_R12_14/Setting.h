@@ -8,7 +8,9 @@ double data[Month][Day];
 char file[Month][CHARBUFF];
 
 //\‘¢‘Ì‚Ìİ’è
-struct com {
+struct Player {
+	int Num;
+	int month;
 	int MoveNum;
 	int point;
 };

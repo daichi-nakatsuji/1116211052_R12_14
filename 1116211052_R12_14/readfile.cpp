@@ -26,7 +26,7 @@ void readFile(char file[Month][CHARBUFF], double data[Month][Day]) {
                 if (count >= 0) {
                     p1 = strtok_s(NULL, delim, &ctx);
                     data[i][count] = atof(p1);
-                    fprintf_s(stderr, "%lf\n", data[i][count]);
+                    /*fprintf_s(stderr, "%lf\n", data[i][count]);*/
                 }
                 count += 1;
             }

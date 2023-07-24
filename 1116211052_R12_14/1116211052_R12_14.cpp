@@ -6,8 +6,10 @@
 #include <Windows.h>
 #include <stdio.h>
 #include <time.h>
+
+#define CHARBUFF 124
 #define BUFFSIZE 1024
-#define RAND_MAX 12 
+#define RAND_MONTH 12 
 
 int main()
 {
@@ -18,15 +20,53 @@ int main()
     readFile(file, data);
    
     //ゲームの実行
+    // //player初期設定
+    Player* com1;
+	com1 = new Player;
+	com1->Num = 1;
+    com1->MoveNum = 0;
+    com1->point = 0;
     //乱数で月を選択
     srand((unsigned int)time(NULL));
-    int month = (int)(rand() % (RAND_MAX));
-    fprintf_s(stdout, "%d月\n", month+1);
+    com1->month = (int)(rand() % (RAND_MONTH));
+    fprintf_s(stdout, "プレイヤー%d：%d月\n",com1->Num, com1->month+1);
 
-    //すごろくの実行
-    
+    //内容作成
+    int count = 0;
+    for (int i = 0; i < 31; i++) {
+        //乱数を時間で初期化しているので、調整
+        while (count < 2000000000) {
+            count += 1;
+        }
+
+        srand((unsigned int)time(NULL));
+        if (data[com1->month][i] < 1.0) {
+            com1->MoveNum = (int)(rand() % 5) + 6;
+            com1->point += (com1->MoveNum * 2);
+        }
+        else if (data[com1->month][i] < 3.0) {
+            com1->MoveNum = (int)(rand() % 5) + 3;
+            com1->point += (com1->MoveNum * 2);
+        }
+        else if(data[com1->month][i] < 9.0) {
+            com1->MoveNum = (int)(rand() % 4) + 1;
+            com1->point += (com1->MoveNum * 2);
+        }
+        else if(data[com1->month][i] == 500.0){
+            com1->MoveNum = 0;
+            com1->point += com1->MoveNum;
+        }
+        else {
+            com1->MoveNum = -1;
+            com1->point -= ((int)(rand() % 10) + 10);
+        }
+        fprintf_s(stdout, "進んだマス数:%d\n", com1->MoveNum);
+        fprintf_s(stdout, "合計獲得ポイント:%d\n", com1->point);
+        count = 0;
+    }
 
     //結果の出力
+    fprintf_s(stdout, "\n最終結果:%d\n", com1->point);
 
 }
 
