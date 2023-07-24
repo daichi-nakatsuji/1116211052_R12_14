@@ -21,7 +21,6 @@ void readFile(char file[Month][CHARBUFF], double data[Month][Day]) {
         if (error != 0)
             fprintf_s(stderr, "failed to open\n");
         else {
-            fprintf_s(stderr, "%d\n", i+1);
             while (fgets(s, BUFFSIZE, fp) != NULL) {
                 p1 = strtok_s(s, delim, &ctx);
                 if (count >= 0) {

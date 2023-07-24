@@ -13,10 +13,7 @@ int main()
 {
     //iniファイルの読み込み
     read_ini(file);
-    for (int i = 0; i < Month; i++) {
-        fprintf_s(stdout, "%s\n", file[i]);
-    }
-
+    
     //CSVファイルの入力
     readFile(file, data);
    
