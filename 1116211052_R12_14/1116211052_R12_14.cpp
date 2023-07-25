@@ -38,29 +38,35 @@ int main()
         while (count < 2000000000) {
             count += 1;
         }
-
         srand((unsigned int)time(NULL));
+        
+        fprintf_s(stdout, "%d日目\n", i + 1);
         if (data[com1->month][i] < 1.0) {
+            fprintf_s(stdout, "降水量:%lf、天気：晴\n", data[com1->month][i]);
             com1->MoveNum = (int)(rand() % 5) + 6;
             com1->point += (com1->MoveNum * 2);
         }
         else if (data[com1->month][i] < 3.0) {
+            fprintf_s(stdout, "降水量:%lf、天気：小雨\n", data[com1->month][i]);
             com1->MoveNum = (int)(rand() % 5) + 3;
             com1->point += (com1->MoveNum * 2);
         }
         else if(data[com1->month][i] < 9.0) {
+            fprintf_s(stdout, "降水量:%lf、天気：雨\n", data[com1->month][i]);
             com1->MoveNum = (int)(rand() % 4) + 1;
             com1->point += (com1->MoveNum * 2);
         }
         else if(data[com1->month][i] == 500.0){
+            fprintf_s(stdout, "存在しない日です\n");
             com1->MoveNum = 0;
             com1->point += com1->MoveNum;
         }
         else {
+            fprintf_s(stdout, "降水量:%lf、天気：豪雨\n", data[com1->month][i]);
             com1->MoveNum = -1;
             com1->point -= ((int)(rand() % 10) + 10);
         }
-        fprintf_s(stdout, "%d日目\n進んだマス数:%d\n", i + 1, com1->MoveNum);
+        fprintf_s(stdout, "進んだマス数:%d\n", com1->MoveNum);
         fprintf_s(stdout, "合計獲得ポイント:%d\n", com1->point);
         count = 0;
     }
